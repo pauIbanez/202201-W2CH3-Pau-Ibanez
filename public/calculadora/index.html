@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+
+        <title> Calculadora ISDI | Pau Ibáñez</title>
+        <link rel="stylesheet" href="index.css">
+        
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+            </style>
+    </head>
+    <body>
+        <div class="background">
+            <img src="img/Background-one.png" alt="background" class="one">
+            <img src="img/Background-two.png" alt="background" class="two">
+            <img src="img/Background-three.png" alt="background" class="three">
+            <img src="img/Background-four.png" alt="background" class="four">
+            <img src="img/Background-five.png" alt="background" class="five">
+        </div>
+        
+
+        <div class="calculator-container">
+            <div class="screen">
+                <div class="screen-text" id="screen">
+                    <div class="screen-text-mem" id="mem"></div>
+                    0
+                </div>
+            </div>
+
+            <div class="flex-container">
+                <div class="flex-left">
+                    <div class="double-alone" onclick="operatorPressed(0)"> AC </div>
+
+                    <div class="double">
+                        <div class="left">
+                            <div class="button" onclick="buttonPressed(textContent)">7</div>
+                        </div>
+                        <div class="right">
+                            <div class="button" onclick="buttonPressed(textContent)">8</div>
+                        </div>
+                    </div>
+
+
+                    <div class="double">
+                        <div class="left">
+                            <div class="button" onclick="buttonPressed(textContent)">4</div>
+                        </div>
+                        <div class="right">
+                            <div class="button" onclick="buttonPressed(textContent)">5</div>
+                        </div>
+                    </div>
+                    <div class="double">
+                        <div class="left">
+                            <div class="button" onclick="buttonPressed(textContent)">1</div>
+                        </div>
+                        <div class="right">
+                            <div class="button" onclick="buttonPressed(textContent)">2</div>
+                        </div>
+                    </div>
+                    <div class="double-alone" onclick="buttonPressed(textContent)">0</div>
+                </div>
+    
+                <div class="flex-right">
+                    <div class="left">
+                        <div class="button" onclick="operatorPressed(1)"><span>&#10150;</span></div>
+                        <div class="button" onclick="buttonPressed(textContent)">9</div>
+                        <div class="button" onclick="buttonPressed(textContent)">6</div>
+                        <div class="button" onclick="buttonPressed(textContent)">3</div>
+                        <div class="button" onclick="buttonPressed('.')">,</div>
+                        
+                    </div>
+                    <div class="right">
+                        <div class="button operator" onclick="operatorPressed(2)">/</div>
+                        <div class="button operator" onclick="operatorPressed(3)">x</div>
+                        <div class="button operator" onclick="operatorPressed(4)">-</div>
+                        <div class="button operator" onclick="operatorPressed(5)">+</div>
+                        <div class="button operator" onclick="operatorPressed(6)">=</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="index.js"></script>
+</html>

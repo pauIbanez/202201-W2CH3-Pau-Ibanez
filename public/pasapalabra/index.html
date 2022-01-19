@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+    <link rel="stylesheet" href="index.css">
+    
+    <meta charset="utf-8"/>
+
+    <head>
+        <title> Pasapalabra | ISDI Pau Ibáñez </title>
+    </head>
+
+    <body id='body' class="screen">
+        <div class='introduction' id='introduction' style='opacity: 0;'>
+            <h2>Bienvenid@ al pasapalabra!</h2>
+            <h4>¿Como jugar?</h4>
+            <p>Para jugar tendrás que responder las preguntas correctamente, en todo momento puedes responder 'pasapalabra' para saltar una pregunta, pero la tendrás que responder a la siguiente ronda. Cada turno es una letra diferente. Yo te describiré una palabra que empiece o contenga la letra de ese turno y tú tienes que adivinar de que estoy hablando.</p>
+            <p>Tendrás 3 minutos para responder todas las preguntas. Empiezas con 50 puntos, si aciertas son +10 puntos, si fallas son -10 puntos y si pasas palabra son -5 puntos. ¡Pero ten prisa, la puntuación disminuye con el tiempo!</p>
+            <p>Recuerda no usar tildes</p>
+            <h4>¡Quiero empezar a jugar!</h4>
+            <p>Para empezar a jugar Introduce un nombre de usuario aquí abajo. ¡Mucha suerte!</p>
+            
+            <label class='input'>
+                <input class='inputField' type="text" placeholder='Introduce tu nombre aqui' onkeypress='checkEnter(startGame)' id='playInp'/>
+            </label>
+            <div>
+                <div class='playButton' id='playBut' onclick='startGame()'> <h2>Jugar!</h2></div>
+                <div class='notification' id='noti'>Tienes que poner un nombre de usuario!</div>
+            </div>
+        </div>
+    </body>
+
+    <script src="index.js"></script>
+</html>
