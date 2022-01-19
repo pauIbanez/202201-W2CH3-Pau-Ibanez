@@ -1,0 +1,265 @@
+ /* Animations */
+@keyframes slideInFromTop {
+    0% {
+      transform: translate(-50%, -200%);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes backgroundSlide {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+  }
+
+.background{
+    position: absolute;
+    width: 150%;
+    margin: -10px 0 0 -10px; 
+
+    
+}
+.background .one{
+    position: absolute;
+    animation: 0.5s ease-out 0s 1 backgroundSlide;
+}
+
+.background .two{
+    position: absolute;
+    animation: 0.7s linear 0s 1 backgroundSlide;
+}
+
+.background .three{
+    position: absolute;
+    animation: 0.9s ease-out 0s 1 backgroundSlide;
+}
+
+.background .four{
+    position: absolute;
+    animation: 1.1s ease-in-out 0s 1 backgroundSlide;
+}
+
+.background .five{
+    position: absolute;
+    animation: 0.5s ease-out 0s 1 backgroundSlide;
+}
+
+body {
+     overflow: hidden;
+     background-color: #FF5733;
+     font-family: 'Roboto', sans-serif;
+  }
+
+.calculator-container{
+    position: absolute;
+    height: 480px;
+    width: 300px;
+    background-color: #E2E2E2;
+
+    border-radius: 15px;
+    
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -200%);
+
+    overflow: hidden;
+    animation: slideInFromTop 1s ease 1s forwards;
+    padding-bottom: 5px;
+}
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+    gap: 5px;
+    margin: 0 5px 0 5px;
+}
+
+.screen{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    height: 20%;
+    background-color: lavender;
+
+}
+
+.screen-text{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    flex-grow: 1;
+
+    text-align: right;
+    margin: 0 5% 5% 0;  
+    font-size: 30px;
+    color: #2A2A2A;
+    vertical-align:bottom;
+}
+.screen-text-mem{
+    flex-grow: 1;
+    font-size: 15px;
+    color: #2A2A2A;
+    transition: 0.5s ease-in;
+
+}
+
+.flex-left{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-grow: 1;
+
+}
+
+.double{
+    width: 100%;
+    height: 20%;
+    /* border-radius: 10px; */
+    /* background-color: gray; */
+    /* justify-content: center; */
+    
+    /* color: #2A2A2A; */
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    /* align-items: center; */
+}
+.double .button{
+    height: 100%;
+    width: 100%;
+}
+
+.double-alone{
+    width: 100%;
+    height: 20%;
+    border-radius: 10px;
+    background-color: gray;
+    justify-content: center;
+    
+    color: #2A2A2A;
+    display: flex;
+    align-items: center;
+}
+.double-alone:hover{
+    background-color: #989898;
+}
+
+.flex-left-in{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 3;
+    width: 100%;
+    gap: 5px;
+}
+
+.flex-right{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: 50%;
+    height: 100%;
+
+}
+
+
+.left{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    gap: 5px;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    gap: 5px;
+}
+
+.button{
+    
+    height: 20%;
+    width: auto;
+    border-radius: 10px;
+    background-color: #787878;
+    justify-content: center;
+    
+    display: flex;
+    align-items: center;
+
+    color: #2A2A2A;
+    font-size: 20px;
+
+}
+
+.flex-left-in .button{
+    height: 33.33333333333333333%;
+}
+
+.button:hover{
+    background-color: #989898;
+}
+
+.operator{
+    background-color: #FF9E00;
+    color: white;
+}
+
+.operator:hover{
+    background-color: #FFB741;
+}
+
+.button span{
+    transform: scale(-1, 1);
+}
+
+
+
+@media (max-width: 800px) {
+    .calculator-container {
+        height: 240px;
+        width: 150px;
+    }
+    .button{
+        border-radius: 5px;
+    }
+
+    .double{
+        border-radius: 5px;
+    }
+}
+@media (max-height: 500px) {
+    .calculator-container {
+        height: 240px;
+        width: 150px;
+    }
+    .button{
+        border-radius: 5px;
+    }
+
+
+    .double{
+        border-radius: 5px;
+    }
+}
+
+
+
+  
+  /* header {  
+    /* This section calls the slideInFromLeft animation we defined above 
+    
+    
+    background: #333;
+    padding: 30px;
+  } */
+  
