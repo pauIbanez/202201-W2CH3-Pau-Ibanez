@@ -1,5 +1,4 @@
 let memory = "";
-const lastOperableNumb = NaN;
 let currentNumber = NaN;
 let currentString = "";
 
@@ -7,14 +6,30 @@ let operator = false;
 let operatorVal;
 let lastCharOperator = false;
 
-function buttonPressed(value) {
+function updateDisplay(newline) {
+  document.getElementById(
+    "screen"
+  ).innerHTML = `<div class='screen-text-mem'>${memory}</div>\n ${currentString}`;
+
+  if (newline) {
+    document.getElementById(
+      "screen"
+    ).innerHTML = `<div class='screen-text-mem'>${memory}</div>\n 0`;
+  }
+}
+
+function emptyMemory() {
+  memory = "";
+  currentString = "";
+  currentNumber = NaN;
   lastCharOperator = false;
-  currentString += value;
-  updateDisplay();
+  operator = false;
+  operatorVal = 0;
+  updateDisplay(true);
 }
 
 function performOperation(value1, value2, val) {
-  if (operatorVal == 0) {
+  if (operatorVal === 0) {
     operatorVal = val;
   }
 
@@ -33,9 +48,18 @@ function performOperation(value1, value2, val) {
 
     case 6:
       return NaN;
+
+    default:
+      return NaN;
   }
 }
 
+function convert(string) {
+  const numb = parseFloat(string);
+  return numb;
+}
+
+// eslint-disable-next-line no-unused-vars
 function operatorPressed(value) {
   switch (value) {
     case 0:
@@ -43,9 +67,9 @@ function operatorPressed(value) {
       break;
 
     case 1:
-      const tempString = currentString.slice(0, -1);
-      currentString = tempString;
-      if (currentString == "") {
+      currentString = currentString.slice(0, -1);
+
+      if (currentString === "") {
         updateDisplay(true);
       } else {
         updateDisplay();
@@ -178,7 +202,7 @@ function operatorPressed(value) {
           value
         );
 
-        if (isNaN(result)) {
+        if (Number.isNaN(result)) {
           result = convert(currentString);
           memory = "";
           memory = `${currentString} = `;
@@ -195,7 +219,7 @@ function operatorPressed(value) {
         operator = false;
         currentNumber = result;
         updateDisplay();
-      } else if (currentString != "") {
+      } else if (currentString !== "") {
         currentNumber = convert(currentString);
         memory = `${currentString} = `;
         currentString = "";
@@ -206,32 +230,15 @@ function operatorPressed(value) {
       }
 
       break;
+
+    default:
+      break;
   }
 }
 
-function emptyMemory() {
-  memory = "";
-  currentString = "";
-  currentNumber = NaN;
+// eslint-disable-next-line no-unused-vars
+function buttonPressed(value) {
   lastCharOperator = false;
-  operator = false;
-  operatorVal = 0;
-  updateDisplay(true);
-}
-
-function convert(string) {
-  const numb = parseFloat(string);
-  return numb;
-}
-
-function updateDisplay(newline) {
-  document.getElementById(
-    "screen"
-  ).innerHTML = `<div class='screen-text-mem'>${memory}</div>\n ${currentString}`;
-
-  if (newline) {
-    document.getElementById(
-      "screen"
-    ).innerHTML = `<div class='screen-text-mem'>${memory}</div>\n 0`;
-  }
+  currentString += value;
+  updateDisplay();
 }
